@@ -1,9 +1,15 @@
-
+:root{
+    --prim-color:#577593;
+    --sec-color: #e0e086;
+    --white-color:#e1e8ee;
+    --black-color:#010a12;
+}
 
 .header{
     display: flex;
     justify-content: space-around;
     width: 100%;
+    background: var(--prim-color);
 
 }
 .header-items ul{
@@ -15,4 +21,8 @@
 }
 .header-items li{
     margin: 15px;
+    color: var(--black-color);
+}
+.header-items a{
+    color: var(--black-color);
 }
