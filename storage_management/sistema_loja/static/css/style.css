@@ -124,3 +124,36 @@
     margin-bottom: 10px;
     background: var(--white-color);
 }
+.products-content {
+    height: 100vh;
+    background: var(--prim-color);
+
+}
+
+.produtos-container {
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    padding-top: 50px;
+}
+
+.produto-card {
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--sec-color);
+    padding: 45px;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.produto-card a {
+    color: var(--white-color);
+}

@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>{{ produto.nome }}</h2>
-  <p>Preço: R$ {{ produto.preco }}</p>
-  <p>Quantidade: {{ produto.quantidade }}</p>
+
+  
   <p><a href="{% url 'lista_produtos' %}">Voltar para os produtos</a></p>
 {% endblock %}

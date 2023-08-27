@@ -18,7 +18,7 @@
                 <nav>
                     <ul>
                         <li><a href="{% url 'home' %}">Página Inicial</a></li>
-                        <li><a href="#">Produtos</a></li>
+                        <li><a href="{% url 'lista_produtos' %}">Produtos</a></li>
                         <!-- ... adicione mais links de navegação ... -->
                         {% if user.is_authenticated %}
                         <li><span>Funcionário : {{ user.username }}</span></li>
