@@ -17,6 +17,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
 MEDIA_URL = '/media/'  # O URL base para servir arquivos de mídia
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # O caminho absoluto para o diretório de mídia
 

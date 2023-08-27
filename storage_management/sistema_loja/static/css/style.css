@@ -10,7 +10,7 @@
 .header{
     display: flex;
     position: fixed;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     background: var(--sec-color);
     box-shadow: var(--shadow-bot);
@@ -34,6 +34,7 @@
 }
 .title{
     color: var(--white-color);
+    margin-left: 20px;
 }
 
 .content{
