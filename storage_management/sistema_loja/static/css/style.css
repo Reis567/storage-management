@@ -79,3 +79,46 @@
     background: var(--th-color);
     transition: .5s;
 }
+
+.login{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--prim-color);
+}
+
+.login-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--sec-color);
+    padding: 45px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-bot);
+}
+
+.login-content h2{
+    margin-bottom: 20px;
+    color: var(--white-color);
+}
+.login-content button{
+    background-color: var(--white-color);
+    width: 40%;
+    margin-top: 20px;
+}
+
+.form-login form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--white-color);
+}
+.form-login form input{
+    margin-left: 5px;
+    margin-bottom: 10px;
+    background: var(--white-color);
+}
