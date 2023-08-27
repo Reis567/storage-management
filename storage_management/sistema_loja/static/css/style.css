@@ -1,6 +1,7 @@
 :root{
     --prim-color:#577593;
     --sec-color: #182f46;
+    --th-color: #022648;
     --white-color:#e8ecf0;
     --black-color:#010a12;
     --shadow-bot: 0px 6px 10px rgba(0, 0, 0, 0.2);;
@@ -58,6 +59,13 @@
     margin-bottom: 20px;
     color: var(--white-color);
 }
+.home-content .logout-home{
+    margin-top: 20px;
+    color: var(--white-color);
+    font-size: 15px;
+    font-weight: bold;
+
+}
 .buttons h4{
     margin-bottom: 25px;
     padding: 15px;
@@ -66,4 +74,8 @@
     border-radius: 8px;
     color: var(--white-color);
     box-shadow: var(--shadow-bot);
+}
+.buttons h4:hover{
+    background: var(--th-color);
+    transition: .5s;
 }
