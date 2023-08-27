@@ -25,15 +25,13 @@ class TipoProduto(models.Model):
 class Vendedor(models.Model):
     departamento = models.ForeignKey(Departamento, on_delete=models.SET_NULL, null=True)
     
-    #Futuramente colocar :
-    # user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # Ainda não é possivel colocar o vendedor por nao ter um sistema de login desenvolvido 
+    user = models.OneToOneField(User, on_delete=models.CASCADE,default=1)
 
     class Meta:
             verbose_name = "Vendedor"
             verbose_name_plural = "Vendedores"
     def __str__(self):
-        return f"Vendedor do {self.departamento}"
+        return self.user
 
 class Produto(models.Model):
     nome = models.CharField(max_length=100)

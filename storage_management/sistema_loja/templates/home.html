@@ -1,6 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Bem-vindo à Nossa Loja</h2>
-<p>Esta é a nossa página inicial.</p>
+
+<div class="content">
+    
+    <div class="home-content">
+        <h2>Bem-vindo {{user.username}}</h2>
+        <div class="buttons">
+    
+            <a href="#">
+                <h4>Produtos</h4>
+            </a>
+    
+            <a href="#">
+                <h4>Funcionários</h4>
+            </a>
+            <a href="#">
+                <h4>Categorias</h4>
+            </a>
+    
+        </div>
+    </div>
+    
+</div>
+
 {% endblock %}
