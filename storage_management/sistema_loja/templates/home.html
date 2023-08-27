@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
 <div class="content">
     
     <div class="home-content">
@@ -22,12 +23,28 @@
         </div>
         <a class="logout-home" href="{% url 'logout' %}">
             <i class="fa-solid fa-right-from-bracket"></i>
-            
+
             Sair
             
         </a>
     </div>
 
 </div>
+{% else %}
+<div class="content">
+    
+    <div class="home-content">
+        <h2>Bem-vindo Funcionário</h2>
+        <div class="buttons">
+    
+            <a href="{% url 'login' %}">
+                <h4>Entrar</h4>
+            </a>
+    
+        </div>
+    </div>
 
+</div>
+
+{% endif %}
 {% endblock %}

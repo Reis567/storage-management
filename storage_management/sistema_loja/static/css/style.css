@@ -47,6 +47,7 @@
 
 .home-content{
     display: flex;
+    width: 400px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
