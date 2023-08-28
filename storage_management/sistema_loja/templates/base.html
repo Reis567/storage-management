@@ -22,6 +22,7 @@
                         <!-- ... adicione mais links de navegação ... -->
                         {% if user.is_authenticated %}
                         <li><span>Funcionário : {{ user.username }}</span></li>
+                        <li><span>Setor : {{ user.vendedor.departamento }}</span></li>
                             <li>
                                 <a href="{% url 'logout' %}">
                                     <i class="fa-solid fa-right-from-bracket"></i> Sair 
