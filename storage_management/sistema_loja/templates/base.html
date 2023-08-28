@@ -17,15 +17,15 @@
             <div class="header-items">
                 <nav>
                     <ul>
-                        <li><a href="{% url 'home' %}">Página Inicial</a></li>
-                        <li><a href="{% url 'lista_produtos' %}">Produtos</a></li>
+                        <li><a href="{% url 'home' %}"><i class="fa-solid fa-house-chimney"></i>  Página Inicial</a></li>
+                        <li><a href="{% url 'lista_produtos' %}"><i class="fa-solid fa-box"></i>  Produtos</a></li>
                         <!-- ... adicione mais links de navegação ... -->
                         {% if user.is_authenticated %}
-                        <li><span>Funcionário : {{ user.username }}</span></li>
-                        <li><span>Setor : {{ user.vendedor.departamento }}</span></li>
+                        <li><span><i class="fa-solid fa-user"></i>  Funcionário : {{ user.username }}</span></li>
+                        <li><span><i class="fa-solid fa-location-dot"></i>  Setor : {{ user.vendedor.departamento }}</span></li>
                             <li>
                                 <a href="{% url 'logout' %}">
-                                    <i class="fa-solid fa-right-from-bracket"></i> Sair 
+                                    <i class="fa-solid fa-right-from-bracket"></i>  Sair 
                                 </a>
                             </li>
                         {% else %}
