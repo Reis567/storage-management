@@ -3,7 +3,7 @@
 {% block content %}
 <div class="products-body">
     <div class="produtos-container">
-        {% for produto in produtos %}
+        {% for produto in page %}
         <div class="produto-card">
             <a href="{% url 'detalhes_produto' produto.id %}">
                 <div class="produto-content">
@@ -15,5 +15,24 @@
         </div>
         {% endfor %}
     </div>
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page.has_previous %}
+            <a href="?page=1">&laquo; primeiro</a>
+            <a href="?page={{ page.previous_page_number }}">anterior</a>
+        {% endif %}
+
+        <span class="current-page">
+            Página {{ page.number }} de {{ page.paginator.num_pages }}. -
+        </span>
+
+        {% if page.has_next %}
+            <a href="?page={{ page.next_page_number }}">próxima pag</a>
+            -
+            <a href="?page={{ page.paginator.num_pages }}">última pag &raquo;</a>
+        {% endif %}
+    </span>
 </div>
 {% endblock %}
