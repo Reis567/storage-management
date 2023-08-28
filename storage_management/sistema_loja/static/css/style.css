@@ -222,11 +222,88 @@ body{
     color: var(--white-color);
 }
 
-.container-detalhes{
+.container-detalhes {
     height: 100vh;
     background: var(--prim-color);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.bloco-detalhes {
+    padding: 40px;
+    background: var(--sec-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.bloco-detalhes a {
+    color: var(--white-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.bloco-detalhes a:hover {
+    color: var(--th-color);
+}
+
+.produto-image img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.produto-details {
+    text-align: center;
+}
+
+.bloco-detalhes h1 {
+    color: var(--white-color);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.produto-details h2 {
+    color: var(--white-color);
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+
+.form-group input,
+.form-group textarea {
+    background-color: var(--prim-color);
+    color: var(--white-color);
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.form-group textarea {
+    resize: vertical;
+    max-height: 400px;
+}
+
+.botao-salvar {
+    padding: 10px 20px;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.botao-salvar:hover {
+    background-color: var(--th-color);
+    color: var(--white-color);
 }
