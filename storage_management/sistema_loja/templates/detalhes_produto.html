@@ -3,15 +3,40 @@
 {% block content %}
 <div class="container-detalhes">
   <p><a href="{% url 'lista_produtos' %}">Voltar para os produtos</a></p>
-    <div class="bloco-detalhes">
-        <h1>{{produto.nome}}</h1>
-        <h2>{{produto.preco}}</h2>
-        <h2>{{produto.descricao}}</h2>
+  <div class="bloco-detalhes">
+    <h1>{{ produto.nome }}</h1>
+    
+    <div class="produto-content">
+      <div class="produto-image">
         {% if produto.foto %}
           <img src="{{ produto.foto.url }}" alt="{{ produto.nome }}">
         {% endif %}
+      </div>
+      
+      <div class="produto-details">
+        <h2>Detalhes do Produto</h2>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            {{ form.nome.label_tag }}
+            {{ form.nome }}
+          </div>
+          <div class="form-group">
+            {{ form.preco.label_tag }}
+            {{ form.preco }}
+          </div>
+          <div class="form-group">
+            {{ form.descricao.label_tag }}
+            {{ form.descricao }}
+          </div>
+          <div class="form-group">
+            {{ form.quantidade.label_tag }}
+            {{ form.quantidade }}
+          </div>
+          <button type="submit">Salvar Alterações</button>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
-  
-  
 {% endblock %}
