@@ -274,7 +274,10 @@ body{
 .form-group {
     margin-bottom: 10px;
 }
-
+.label i{
+    color: var(--white-color);
+    margin-bottom: 5px;
+}
 
 .form-group input,
 .form-group textarea {

@@ -4,7 +4,7 @@
 <div class="container-detalhes">
 
   <div class="bloco-detalhes">
-    <p><a href="{% url 'lista_produtos' %}">Voltar</a></p>
+    <p><a href="{% url 'lista_produtos' %}"><i class="fa-solid fa-arrow-left"></i>  Voltar</a></p>
     <h1>{{ produto.nome }}</h1>
     
     <div class="produto-content">
@@ -18,34 +18,30 @@
         <form method="post">
           {% csrf_token %}
           <div class="form-group">
-            <span class="label">
-              {{ form.nome.label_tag }}
-            </span>
             
-            {{ form.nome }}
           </div>
           <div class="form-group">
             <span class="label">
-              {{ form.preco.label_tag }}
+              <i class="fa-solid fa-money-bill"></i> {{ form.preco.label_tag }}
             </span>
             
             {{ form.preco }}
           </div>
           <div class="form-group">
             <span class="label">
-              {{ form.descricao.label_tag }}
+              <i class="fa-solid fa-grip-lines"></i> {{ form.descricao.label_tag }}
             </span>
             
             {{ form.descricao }}
           </div>
           <div class="form-group">
             <span class="label">
-              {{ form.quantidade.label_tag }}
+              <i class="fa-solid fa-arrow-up-wide-short"></i> {{ form.quantidade.label_tag }}
             </span>
             
             {{ form.quantidade }}
           </div>
-          <button class="botao-salvar" type="submit">Salvar</button>
+          <button class="botao-salvar" type="submit"> <i class="fa-solid fa-download"></i>  Salvar</button>
         </form>
       </div>
     </div>
