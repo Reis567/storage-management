@@ -10,15 +10,15 @@ def home(request):
 
 
 def lista_produtos(request):
-    produtos = Produto.objects.all()
+    produtos = Produto.objects.all().order_by('tipo__departamento__nome')  # Ordenar por nome do departamento
 
     paginator = Paginator(produtos, 15)  # Dividir a lista de produtos em páginas de 15 itens cada
     page_number = request.GET.get('page')  # Obter o número da página da query string
     page = paginator.get_page(page_number)  # Obter a página atual
     return render(request, 'lista_produtos.html', 
     {
-                'produtos': produtos,
-                'page': page,
+        'produtos': produtos,
+        'page': page,
     })
 
 
