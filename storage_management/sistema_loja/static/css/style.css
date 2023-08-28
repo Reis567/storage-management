@@ -221,3 +221,12 @@ body{
 .pagination a{
     color: var(--white-color);
 }
+
+.container-detalhes{
+    height: 100vh;
+    background: var(--prim-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

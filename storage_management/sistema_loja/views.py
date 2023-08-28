@@ -33,7 +33,7 @@ def lista_produtos(request):
         'page': page,
     })
 
-
+@login_required
 def detalhes_produto(request, produto_id):
     produto = get_object_or_404(Produto, pk=produto_id)
     return render(request, 'detalhes_produto.html', 
