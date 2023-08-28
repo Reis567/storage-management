@@ -95,6 +95,11 @@ body{
     flex-direction: column;
     background: var(--prim-color);
 }
+.login-warning{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
 
 .login-content{
     display: flex;
