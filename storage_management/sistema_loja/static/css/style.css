@@ -86,8 +86,7 @@ body{
     background: var(--th-color);
     transition: .5s;
 }
-
-.login{
+.login {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -95,13 +94,15 @@ body{
     flex-direction: column;
     background: var(--prim-color);
 }
-.login-warning{
+
+.login-warning {
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
+    color: var(--black-color);
 }
 
-.login-content{
+.login-content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,28 +113,52 @@ body{
     box-shadow: var(--shadow-bot);
 }
 
-.login-content h2{
+.login-content h2 {
     margin-bottom: 20px;
     color: var(--white-color);
 }
-.login-content button{
-    background-color: var(--white-color);
-    width: 40%;
-    margin-top: 20px;
+
+.login-content button {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.5s;
 }
 
-.form-login form{
+.login-content button:hover {
+    background-color: var(--th-color);
+}
+
+.form-login form {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     color: var(--white-color);
 }
-.form-login form input{
-    margin-left: 5px;
-    margin-bottom: 10px;
-    background: var(--white-color);
+
+.form-group label {
+    color: var(--white-color); /* Mudar a cor da fonte dos labels para --black-color */
+    font-weight: bold;
+    font-size: 18px;
 }
+
+.form-login form input {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 15px;
+    background: var(--prim-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--white-color);
+}
+
 .products-body {
     height: 100vh;
     background: var(--prim-color);
