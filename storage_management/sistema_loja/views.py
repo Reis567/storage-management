@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Produto
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, Page
 from django.contrib.auth.decorators import login_required
+from .forms import ProdutoForm
 
 # Create your views here.
 def home(request):
@@ -36,7 +37,16 @@ def lista_produtos(request):
 @login_required
 def detalhes_produto(request, produto_id):
     produto = get_object_or_404(Produto, pk=produto_id)
-    return render(request, 'detalhes_produto.html', 
-    {
-        'produto': produto
+    
+    if request.method == 'POST':
+        form = ProdutoForm(request.POST, instance=produto)
+        if form.is_valid():
+            form.save()
+            return redirect('detalhes_produto', produto_id=produto_id)
+    else:
+        form = ProdutoForm(instance=produto)
+    
+    return render(request, 'detalhes_produto.html', {
+        'produto': produto,
+        'form': form,
     })
