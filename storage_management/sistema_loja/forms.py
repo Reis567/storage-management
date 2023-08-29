@@ -4,4 +4,4 @@ from .models import Produto
 class ProdutoForm(forms.ModelForm):
     class Meta:
         model = Produto
-        fields = ['preco', 'descricao', 'quantidade']  # Campos editáveis
+        fields = ['nome', 'foto', 'tipo', 'descricao', 'preco', 'quantidade']
