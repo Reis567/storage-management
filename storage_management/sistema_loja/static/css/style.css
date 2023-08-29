@@ -35,6 +35,10 @@ body{
     color: var(--white-color);
     font-weight: 500;
 }
+.header-items a:hover{
+    color: var(--black-color);
+    transition: .5s;
+}
 .title{
     margin-left: 20px;
 }
@@ -248,7 +252,7 @@ body{
 }
 
 .bloco-detalhes a:hover {
-    color: var(--th-color);
+    color: var(--black-color);
 }
 
 .produto-image img {
@@ -361,7 +365,7 @@ body{
 }
 
 .container-adicionar-produto a:hover{
-    color: var(--sec-color);
+    color: var(--black-color);
     transition: .5s;
 }
 
@@ -382,4 +386,7 @@ body{
     font-size: 13px;
     margin-bottom: 10px;
     color:var(--white-color);
+}
+.container-adicionar-produto i{
+    margin-bottom: 3px;
 }
