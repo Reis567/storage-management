@@ -50,3 +50,18 @@ def detalhes_produto(request, produto_id):
         'produto': produto,
         'form': form,
     })
+
+
+@login_required
+def adicionar_produto(request):
+    if request.method == 'POST':
+        form = ProdutoForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_produtos')  # Redirecionar para a lista de produtos após adicionar
+    else:
+        form = ProdutoForm()
+    
+    return render(request, 'adicionar_produto.html', {
+        'form': form
+        })
