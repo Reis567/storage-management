@@ -29,6 +29,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='registration/logout.html'), name='logout'),
     path('produtos/', views.lista_produtos, name='lista_produtos'),
     path('produto/<int:produto_id>/', views.detalhes_produto, name='detalhes_produto'),
+    path('adicionar_produto/', views.adicionar_produto, name='adicionar_produto'),
 
 ]
 if settings.DEBUG:

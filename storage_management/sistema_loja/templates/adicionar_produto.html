@@ -1,42 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container-adicionar-produto">
-    <h1>Adicionar Novo Produto</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        
-        <div class="form-group">
-            <label for="{{ form.nome.id_for_label }}">Nome do Produto:</label>
-            {{ form.nome }}
-        </div>
-        
-        <div class="form-group">
-            <label for="{{ form.foto.id_for_label }}">Foto do Produto:</label>
-            {{ form.foto }}
-        </div>
-        
-        <div class="form-group">
-            <label for="{{ form.tipo.id_for_label }}">Tipo de Produto:</label>
-            {{ form.tipo }}
-        </div>
-        
-        <div class="form-group">
-            <label for="{{ form.descricao.id_for_label }}">Descrição do Produto:</label>
-            {{ form.descricao }}
-        </div>
-        
-        <div class="form-group">
-            <label for="{{ form.preco.id_for_label }}">Preço do Produto:</label>
-            {{ form.preco }}
-        </div>
-        
-        <div class="form-group">
-            <label for="{{ form.quantidade.id_for_label }}">Quantidade:</label>
-            {{ form.quantidade }}
-        </div>
-        
-        <button type="submit">Adicionar Produto</button>
-    </form>
+
+<div class="content-adicionar-produto">
+    <div class="container-adicionar-produto">
+        <p><a href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i>  Voltar</a></p>
+        <h1>Adicionar Novo Produto</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="{{ form.nome.id_for_label }}">Nome do Produto:</label>
+                {{ form.nome }}
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.foto.id_for_label }}">Foto do Produto:</label>
+                {{ form.foto }}
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.tipo.id_for_label }}">Tipo de Produto:</label>
+                {{ form.tipo }}
+            </div>
+            <h3 class="tipo-warning">Se não obtiver o tipo de produto que deseja , favor solicitar a administração a adição do tipo</h3>
+            
+            <div class="form-group">
+                <label for="{{ form.descricao.id_for_label }}">Descrição do Produto:</label>
+                {{ form.descricao }}
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.preco.id_for_label }}">Preço do Produto:</label>
+                {{ form.preco }}
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.quantidade.id_for_label }}">Quantidade:</label>
+                {{ form.quantidade }}
+            </div>
+            
+            <button type="submit">Adicionar Produto</button>
+        </form>
+    </div>
+
 </div>
 {% endblock %}

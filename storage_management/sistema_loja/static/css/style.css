@@ -310,3 +310,76 @@ body{
     background-color: var(--th-color);
     color: var(--white-color);
 }
+.content-adicionar-produto{
+    height: 100vh;
+    background: var(--prim-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container-adicionar-produto{
+    background: var(--sec-color);
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container-adicionar-produto form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.container-adicionar-produto .form-group{
+    width: 100%;
+}
+.container-adicionar-produto h1{
+    color: var(--white-color);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.container-adicionar-produto button {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+.container-adicionar-produto a{
+    color: var(--white-color);
+}
+
+.container-adicionar-produto a:hover{
+    color: var(--sec-color);
+    transition: .5s;
+}
+
+
+.container-adicionar-produto button:hover {
+    background-color: var(--th-color);
+}
+.form-group{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.form-group select{
+    background: var(--prim-color);
+    padding: 5px;
+    border-radius: 5px;
+}
+.tipo-warning{
+    font-size: 13px;
+    margin-bottom: 10px;
+    color:var(--white-color);
+}
