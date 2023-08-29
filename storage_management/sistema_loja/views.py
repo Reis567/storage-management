@@ -111,11 +111,10 @@ def adicionar_produto(request):
     if request.method == 'POST':
         form = ProdutoForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('lista_produtos')  # Redirecionar para a lista de produtos após adicionar
+            novo_produto = form.save()  # Salvar o produto e obter o objeto criado
+            produto_id = novo_produto.id  # Obter o ID do produto criado
+            return redirect('detalhes_produto', produto_id=produto_id)  # Redirecionar para a página de detalhes
     else:
         form = ProdutoForm()
     
     return render(request, 'adicionar_produto.html', {'form': form})
-
-
