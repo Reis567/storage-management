@@ -75,3 +75,9 @@ def excluir_produto(request, produto_id):
     return redirect('detalhes_produto', produto_id=produto_id)
 
 
+@login_required
+def criar_usuario(request):
+    if not request.user.is_staff:
+        messages.error(request, 'Você não tem permissão para isso.')
+        return redirect('home')
+    return render(request, 'criar_usuario.html')
