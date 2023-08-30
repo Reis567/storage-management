@@ -5,6 +5,8 @@ from django.core.paginator import Paginator, Page
 from django.contrib.auth.decorators import login_required
 from .forms import ProdutoForm
 from django.contrib import messages
+from .models import Vendedor
+from .forms import RegistroUsuarioForm
 
 # Create your views here.
 def home(request):
@@ -80,4 +82,21 @@ def criar_usuario(request):
     if not request.user.is_staff:
         messages.error(request, 'Você não tem permissão para isso.')
         return redirect('home')
-    return render(request, 'criar_usuario.html')
+    
+    if request.method == 'POST':
+        form = RegistroUsuarioForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            departamento = form.cleaned_data['departamento']
+            foto = form.cleaned_data['foto']
+            
+            vendedor = Vendedor(user=user, departamento=departamento, foto=foto)
+            vendedor.save()
+            
+            messages.success(request, 'Usuário e vendedor criados com sucesso.')
+            return redirect('home')
+    else:
+        form = RegistroUsuarioForm()
+    
+    context = {'form': form}
+    return render(request, 'seu_template_de_criacao_de_usuario.html', context)
