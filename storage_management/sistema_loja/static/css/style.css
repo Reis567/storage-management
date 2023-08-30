@@ -409,7 +409,7 @@ body{
     margin-bottom: 3px;
 }
 
-.usercreate-body{
+.usercreate-body {
     height: 100vh;
     background: var(--prim-color);
     display: flex;
@@ -420,14 +420,38 @@ body{
     box-shadow: var(--shadow-bot);
 }
 
-.usercreate-form{
+.usercreate-form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background: var(--sec-color);
-    padding: 20px;
+    padding: 30px; /* Aumentei o padding para deixar mais espaço */
     border-radius: 10px;
     width: 30%;
-    height: 50%;
+    height: auto; /* Alterei a altura para se ajustar ao conteúdo */
+    text-align: center; /* Centralizar o texto */
+}
+
+.usercreate-form h2 {
+    font-size: 24px; /* Aumentei o tamanho da fonte */
+    margin-bottom: 20px; /* Adicionei margem inferior */
+}
+
+.usercreate-form button {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    margin-top: 20px; /* Adicionei margem superior */
+}
+
+.usercreate-form button:hover {
+    background-color: var(--th-color);
 }
