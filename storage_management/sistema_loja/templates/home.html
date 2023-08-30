@@ -16,6 +16,11 @@
             <a href="{% url 'adicionar_produto' %}">
                 <h4><i class="fa-solid fa-plus"></i>  Adicionar Produtos</h4>
             </a>
+            {% if user.is_staff %}
+            <a href="{% url 'criar_usuario' %}">
+                <h4><i class="fa-solid fa-user-plus"></i>  Criar Novo Usuário</h4>
+            </a>
+        {% endif %}
     
         </div>
         <a class="logout-home" href="{% url 'logout' %}">
