@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Criar Novo Usuário</h2>
+    <h2>Criar Novo Usuário e Vendedor</h2>
     
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <!-- Campos do formulário para criar o novo usuário -->
-        <label for="username">Nome de Usuário:</label>
-        <input type="text" name="username" required>
         
-        <label for="password">Senha:</label>
-        <input type="password" name="password" required>
+        {{ form.username.label_tag }} {{ form.username }}
+        {{ form.password1.label_tag }} {{ form.password1 }}
+        {{ form.password2.label_tag }} {{ form.password2 }}
         
-        <button type="submit">Criar Usuário</button>
+        {{ form.departamento.label_tag }} {{ form.departamento }}
+        {{ form.foto.label_tag }} {{ form.foto }}
+        
+        <button type="submit">Criar Usuário e Vendedor</button>
     </form>
 {% endblock %}
