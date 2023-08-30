@@ -9,27 +9,27 @@
             {% csrf_token %}
             
             <div class="form-group">
-                {{ form.username.label_tag }}
+                <label for="{{ form.username.id_for_label }}">Nome de Usuário:</label>
                 {{ form.username }}
             </div>
             <div class="form-group">
-                {{ form.password1.label_tag }}
+                <label for="{{ form.password1.id_for_label }}">Senha:</label>
                 {{ form.password1 }}
             </div>
             <div class="form-group">
-                {{ form.password2.label_tag }}
+                <label for="{{ form.password2.id_for_label }}">Confirmação de Senha:</label>
                 {{ form.password2 }}
             </div>
             <div class="form-group">
-                {{ form.departamento.label_tag }}
+                <label for="{{ form.departamento.id_for_label }}">Departamento:</label>
                 {{ form.departamento }}
             </div>
             <div class="form-group">
-                {{ form.foto.label_tag }}
+                <label for="{{ form.foto.id_for_label }}">Foto:</label>
                 {{ form.foto }}
             </div>
             
-            <button type="submit">Criar Usuário e Vendedor</button>
+            <button type="submit">Criar Vendedor</button>
         </form>
     </div>
 </div>
