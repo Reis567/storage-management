@@ -455,3 +455,16 @@ body{
 .usercreate-form button:hover {
     background-color: var(--th-color);
 }
+.usercreate-form a{
+    color: var(--white-color);
+    
+}
+
+.usercreate-form a:hover{
+    color: var(--black-color);
+    transition: .5s;
+}
+.usercreate-form i{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
