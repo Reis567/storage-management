@@ -3,33 +3,33 @@
 {% block content %}
 <div class="usercreate-body">
     <div class="usercreate-form">
-        <h2>Criar Vendedor</h2>
+        <h2> Criar Vendedor</h2>
         
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             
             <div class="form-group">
-                <label for="{{ form.username.id_for_label }}">Nome de Usuário:</label>
+                <label for="{{ form.username.id_for_label }}"><i class="fas fa-user"></i> Nome de Usuário:</label>
                 {{ form.username }}
             </div>
             <div class="form-group">
-                <label for="{{ form.password1.id_for_label }}">Senha:</label>
+                <label for="{{ form.password1.id_for_label }}"><i class="fas fa-lock"></i> Senha:</label>
                 {{ form.password1 }}
             </div>
             <div class="form-group">
-                <label for="{{ form.password2.id_for_label }}">Confirmação de Senha:</label>
+                <label for="{{ form.password2.id_for_label }}"><i class="fas fa-lock"></i> Confirmação de Senha:</label>
                 {{ form.password2 }}
             </div>
             <div class="form-group">
-                <label for="{{ form.departamento.id_for_label }}">Departamento:</label>
+                <label for="{{ form.departamento.id_for_label }}"><i class="fas fa-building"></i> Departamento:</label>
                 {{ form.departamento }}
             </div>
             <div class="form-group">
-                <label for="{{ form.foto.id_for_label }}">Foto:</label>
+                <label for="{{ form.foto.id_for_label }}"><i class="fas fa-camera"></i> Foto:</label>
                 {{ form.foto }}
             </div>
             
-            <button type="submit">Criar Vendedor</button>
+            <button type="submit"><i class="fas fa-check"></i> Criar Vendedor</button>
         </form>
     </div>
 </div>
