@@ -4,8 +4,11 @@
     --th-color: #022648;
     --white-color:#e8ecf0;
     --black-color:#010a12;
-    --shadow-bot: 0px 6px 10px rgba(0, 0, 0, 0.2);;
+    --shadow-bot: 0px 6px 10px rgba(0, 0, 0, 0.2);
+    --red-color:#791010;
+    --red-stgr:#ac0e0e;
 }
+
 body{
     height: 100vh;
 }
@@ -321,7 +324,7 @@ body{
 
 .botao-excluir {
     padding: 10px 20px;
-    background-color: #791010;
+    background-color: var(--red-color);
     color: var(--white-color);
     font-weight: bold;
     border: none;
@@ -330,7 +333,7 @@ body{
     transition: background-color 0.3s, color 0.3s;
 }
 .botao-excluir:hover{
-    background-color: #ac0e0e;
+    background-color: var(--red-stgr);
 }
 .content-adicionar-produto{
     height: 100vh;
