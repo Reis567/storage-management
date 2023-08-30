@@ -408,3 +408,26 @@ body{
 .container-adicionar-produto i{
     margin-bottom: 3px;
 }
+
+.usercreate-body{
+    height: 100vh;
+    background: var(--prim-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--white-color);
+    box-shadow: var(--shadow-bot);
+}
+
+.usercreate-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--sec-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    height: 50%;
+}

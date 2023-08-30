@@ -1,18 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Criar Novo Usuário e Vendedor</h2>
-    
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
+<div class="usercreate-body">
+    <div class="usercreate-form">
+        <h2>Criar Novo Usuário e Vendedor</h2>
         
-        {{ form.username.label_tag }} {{ form.username }}
-        {{ form.password1.label_tag }} {{ form.password1 }}
-        {{ form.password2.label_tag }} {{ form.password2 }}
-        
-        {{ form.departamento.label_tag }} {{ form.departamento }}
-        {{ form.foto.label_tag }} {{ form.foto }}
-        
-        <button type="submit">Criar Usuário e Vendedor</button>
-    </form>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+            </div>
+            <div class="form-group">
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+            </div>
+            <div class="form-group">
+                {{ form.password2.label_tag }}
+                {{ form.password2 }}
+            </div>
+            <div class="form-group">
+                {{ form.departamento.label_tag }}
+                {{ form.departamento }}
+            </div>
+            <div class="form-group">
+                {{ form.foto.label_tag }}
+                {{ form.foto }}
+            </div>
+            
+            <button type="submit">Criar Usuário e Vendedor</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
