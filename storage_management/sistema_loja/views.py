@@ -118,3 +118,11 @@ def adicionar_produto(request):
         form = ProdutoForm()
     
     return render(request, 'adicionar_produto.html', {'form': form})
+
+@login_required
+def excluir_produto(request, produto_id):
+    produto = get_object_or_404(Produto, pk=produto_id)
+    if request.method == 'POST':
+        produto.delete()
+        return redirect('lista_produtos')
+    return redirect('detalhes_produto', produto_id=produto_id)

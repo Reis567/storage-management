@@ -317,7 +317,20 @@ body{
 
 .botao-salvar:hover {
     background-color: var(--th-color);
+}
+
+.botao-excluir {
+    padding: 10px 20px;
+    background-color: #791010;
     color: var(--white-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.botao-excluir:hover{
+    background-color: #ac0e0e;
 }
 .content-adicionar-produto{
     height: 100vh;

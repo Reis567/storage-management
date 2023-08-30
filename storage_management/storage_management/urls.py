@@ -30,6 +30,8 @@ urlpatterns = [
     path('produtos/', views.lista_produtos, name='lista_produtos'),
     path('produto/<int:produto_id>/', views.detalhes_produto, name='detalhes_produto'),
     path('adicionar_produto/', views.adicionar_produto, name='adicionar_produto'),
+    path('produto/<int:produto_id>/excluir/', views.excluir_produto, name='excluir_produto'),
+
 
 ]
 if settings.DEBUG:

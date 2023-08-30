@@ -2,24 +2,14 @@
 
 {% block content %}
 <div class="container-detalhes">
-
   <div class="bloco-detalhes">
     <p><a href="{% url 'lista_produtos' %}"><i class="fa-solid fa-arrow-left"></i>  Voltar</a></p>
     <h1>{{ produto.nome }}</h1>
     
     <div class="produto-content">
-      <div class="produto-image">
-        <!-- {% if produto.foto %}
-           <img src="{{ produto.foto.url }}" alt="{{ produto.nome }}">
-        {% endif %}-->
-      </div>
-      
       <div class="produto-details">
         <form method="post">
           {% csrf_token %}
-          <div class="form-group">
-            
-          </div>
           <div class="form-group">
             <span class="label">
               <i class="fa-solid fa-money-bill"></i> {{ form.preco.label_tag }}
@@ -41,10 +31,45 @@
             
             {{ form.quantidade }}
           </div>
-          <button class="botao-salvar" type="submit"> <i class="fa-solid fa-download"></i>  Salvar</button>
+
+          <div class="botoes">
+            <button class="botao-salvar" type="submit">
+              <i class="fa-solid fa-download"></i> Salvar
+            </button>
+            <button class="botao-excluir" id="btnExcluir" data-url="{% url 'excluir_produto' produto.id %}">
+              <i class="fa-solid fa-trash"></i> Excluir
+            </button>
+          </div>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const btnExcluir = document.getElementById("btnExcluir");
+    btnExcluir.addEventListener("click", function() {
+      if (confirm('Tem certeza de que deseja excluir este produto?')) {
+        const url = btnExcluir.getAttribute("data-url");
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "X-CSRFToken": "{{ csrf_token }}",
+            "Content-Type": "application/json"
+          }
+        })
+        .then(response => {
+          if (response.ok) {
+            // Redirecionar para a lista de produtos ou outra página
+            window.location.href = "{% url 'lista_produtos' %}";
+          }
+        })
+        .catch(error => {
+          console.error(error);
+        });
+      }
+    });
+  });
+</script>
 {% endblock %}
