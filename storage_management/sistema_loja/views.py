@@ -8,7 +8,12 @@ from django.contrib import messages
 from .models import Vendedor
 from .forms import RegistroUsuarioForm
 from django.http import Http404
+from django.contrib.auth.decorators import login_required, user_passes_test
 
+
+
+def is_admin(user):
+    return user.is_staff
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -78,11 +83,8 @@ def excluir_produto(request, produto_id):
 
 
 @login_required
+@user_passes_test(is_admin, login_url='home')
 def criar_usuario(request):
-    if not request.user.is_staff:
-        messages.error(request, 'Você não tem permissão para isso.')
-        return redirect('home')
-    
     if request.method == 'POST':
         form = RegistroUsuarioForm(request.POST)
         if form.is_valid():
