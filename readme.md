@@ -2,7 +2,7 @@
 
 Welcome to the Inventory Management System, a project to manage products and vendors in an e-commerce environment. This project was developed by [Reis567](https://github.com/Reis567).
 
-![Screenshot](home.png)
+![Screenshot](home.PNG)
 
 ## Project Screens
 
