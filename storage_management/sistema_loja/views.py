@@ -7,6 +7,7 @@ from .forms import ProdutoForm
 from django.contrib import messages
 from .models import Vendedor
 from .forms import RegistroUsuarioForm
+from django.http import Http404
 
 # Create your views here.
 def home(request):
@@ -27,20 +28,20 @@ def lista_produtos(request):
     else:
         produtos = Produto.objects.none()  # Se nenhum vendedor ou gerência, não mostrar produtos
 
-
     paginator = Paginator(produtos, 15)  # Dividir a lista de produtos em páginas de 15 itens cada
     page_number = request.GET.get('page')  # Obter o número da página da query string
     page = paginator.get_page(page_number)  # Obter a página atual
-    return render(request, 'lista_produtos.html', 
-    {
-        'produtos': produtos,
-        'page': page,
-    })
+
+    return render(request, 'lista_produtos.html', {'page': page})
 
 @login_required
 def detalhes_produto(request, produto_id):
     produto = get_object_or_404(Produto, pk=produto_id)
-    
+    user = request.user
+
+    if not user.is_superuser and (not user.vendedor or user.vendedor.departamento != produto.tipo.departamento):
+        raise Http404("Produto não encontrado")
+
     if request.method == 'POST':
         form = ProdutoForm(request.POST, instance=produto)
         if form.is_valid():
@@ -53,7 +54,6 @@ def detalhes_produto(request, produto_id):
         'produto': produto,
         'form': form,
     })
-
 
 @login_required
 def adicionar_produto(request):
