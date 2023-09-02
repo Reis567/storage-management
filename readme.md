@@ -99,7 +99,7 @@ Before you begin, make sure you have the following installed on your machine:
 
 Bem-vindo ao Sistema de Controle de Estoque, um projeto para gerenciar produtos e vendedores em um ambiente de comércio eletrônico. Este projeto foi desenvolvido por [Reis567](https://github.com/Reis567).
 
-![Captura de Tela](home.png)
+![Captura de Tela](home.PNG)
 
 ## Telas do Projeto
 
